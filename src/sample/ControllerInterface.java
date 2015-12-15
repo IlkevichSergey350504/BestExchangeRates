@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable{
+public class ControllerInterface implements Initializable{
 
     @FXML
     private Button buttonFind;
@@ -42,11 +42,13 @@ public class Controller implements Initializable{
     @FXML
     private void comboBoxAction(){
 
-        System.err.println("choiceBoxAction");
+        buttonFind.setDisable(false);
+        labelStatusBar.setText("Currency chosen. Please, press \"Find\" button");
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         comboBox.setItems(list);
+        labelStatusBar.setText("Choose currency");
     }
 }
